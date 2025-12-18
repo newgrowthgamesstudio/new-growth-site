@@ -133,24 +133,21 @@
         .btn-discord { background: var(--discord-blurple); }
         .btn-discord:hover { background: #4752c4; }
 
-        /* --- ABOUT US STYLES --- */
-        .about-intro {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 40px auto;
-        }
+        /* --- MISSION & ABOUT --- */
         .mission-statement {
             font-style: italic;
             color: var(--accent);
             font-size: 1.3rem;
             margin-top: 25px;
             font-weight: 500;
+            text-align: center;
         }
 
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
+            margin-top: 40px;
         }
         .value-card {
             background: rgba(255, 255, 255, 0.03);
@@ -158,27 +155,23 @@
             border-radius: 8px;
             text-align: center;
             border: 1px solid var(--border-color);
-            transition: 0.3s;
         }
-        .value-card:hover { border-color: var(--accent); transform: translateY(-5px); }
         .value-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
         .value-card h3 { margin-bottom: 10px; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* --- GAME SECTION & FEATURE CARDS --- */
+        /* --- GAME SECTION --- */
         .game-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: start;
         }
-
         .game-features {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
             margin-top: 30px;
         }
-
         .feature-card {
             background: rgba(255, 255, 255, 0.05);
             padding: 20px;
@@ -187,36 +180,11 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        .feature-icon { font-size: 2.5rem; min-width: 60px; text-align: center; }
+        .feature-text h3 { color: var(--accent); margin-bottom: 5px; text-transform: uppercase; font-size: 1.1rem; }
 
-        .feature-card:hover {
-            transform: scale(1.02);
-            border-color: var(--accent);
-            box-shadow: 0 0 15px rgba(91, 163, 69, 0.2);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            min-width: 60px;
-            text-align: center;
-        }
-
-        .feature-text h3 {
-            color: var(--accent);
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .feature-text p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        /* --- CAREERS & ACCORDIONS --- */
+        /* --- CAREERS & JOB CARDS --- */
         .requirements-box {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--accent);
@@ -230,23 +198,21 @@
             gap: 30px;
             margin-top: 20px;
         }
-        .req-column h3 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 8px; }
-        .req-column ul li { margin-bottom: 8px; font-size: 0.9rem; color: var(--text-muted); padding-left: 20px; position: relative; }
-        .req-column ul li::before { content: "•"; color: var(--accent); position: absolute; left: 0; }
+        .req-column h3 { color: var(--text-main); font-size: 1.1rem; border-bottom: 1px solid #444; padding-bottom: 8px; margin-bottom: 15px; }
 
+        /* UPDATED: Split Layout for Job Cards */
         .job-list { display: flex; flex-direction: column; gap: 12px; }
         details.job-card {
             background: var(--card-bg);
             border-radius: 6px;
             border-left: 4px solid #444;
-            transition: 0.2s;
         }
-        details.job-card[open] { border-left: 4px solid var(--accent); background: #222; }
+        details.job-card[open] { border-left: 4px solid var(--accent); }
+
         summary {
             padding: 18px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -256,44 +222,49 @@
         summary::after { content: "+"; color: var(--accent); font-size: 1.2rem; }
         details[open] summary::after { content: "-"; }
 
-        .job-details { padding: 0 18px 20px 18px; color: var(--text-muted); font-size: 0.95rem; }
-        .job-details h4 { color: var(--text-main); margin: 15px 0 5px 0; font-size: 0.9rem; text-transform: uppercase; }
+        .job-details {
+            padding: 0 18px 20px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end; /* Aligns button to bottom of text */
+            gap: 30px;
+        }
+        .job-text-content { flex: 1; color: var(--text-muted); font-size: 0.95rem; }
+        .job-text-content h4 { color: var(--text-main); margin: 15px 0 5px 0; text-transform: uppercase; font-size: 0.9rem; }
 
         .apply-btn-small {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 24px;
             background: var(--accent);
             color: #fff !important;
             font-weight: bold;
             border-radius: 4px;
             font-size: 0.85rem;
             text-transform: uppercase;
+            white-space: nowrap; /* Button won't wrap */
+            transition: 0.3s;
         }
+        .apply-btn-small:hover { background: var(--accent-hover); transform: translateY(-2px); }
 
         /* --- FOOTER --- */
         footer {
             text-align: center;
             padding: 40px 20px;
             border-top: 1px solid #333;
-            font-size: 0.8rem;
             color: var(--text-muted);
+            font-size: 0.8rem;
         }
 
-        /* --- RESPONSIVE BREAKPOINTS --- */
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            section { padding: 40px 0; }
-            nav { flex-direction: column; gap: 15px; }
-            .nav-links { font-size: 0.8rem; gap: 10px; }
-            .hero { padding: 60px 20px; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero-btns { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
-            .btn { width: 100%; }
-            .game-grid { grid-template-columns: 1fr; gap: 30px; }
-            .game-content { order: 2; }
-            .game-image { order: 1; }
+            .game-grid { grid-template-columns: 1fr; }
             .requirements-grid { grid-template-columns: 1fr; }
-            .logo-img { height: 50px; }
+            .hero-btns { flex-direction: column; }
+            .hero-btns .btn { width: 100%; }
+
+            /* Job Card Mobile Fix */
+            .job-details { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .apply-btn-small { width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -330,8 +301,8 @@
     <section id="about">
         <div class="container">
             <div class="about-intro">
-                <h2>Our Studio</h2>
-                <p>New Growth Games is an independent studio of talented developers focused on releasing our first full title. Our formation is the direct result of successful collaboration on game jams and community projects.</p>
+                <h2 style="text-align:center; color: var(--accent); text-transform: uppercase;">Our Studio</h2>
+                <p style="text-align:center;">New Growth Games is an independent studio of talented developers focused on releasing our first full title. Our formation is the direct result of successful collaboration on game jams and community projects.</p>
                 <p class="mission-statement">"Building games with soul that respect the players time and reward their skill."</p>
             </div>
             <div class="values-grid">
@@ -360,7 +331,6 @@
                 <div class="game-content">
                     <h2>Project Hijack</h2>
                     <p>A dynamic vehicular heist experience set on a resource-strapped frontier world. Scavenge corporate remnants and lead the <strong>Badlands Alliance</strong>.</p>
-
                     <div class="game-features">
                         <div class="feature-card">
                             <div class="feature-icon">🏎️</div>
@@ -385,16 +355,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="game-image">
                     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #333; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
-                        <iframe
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                            src="https://www.youtube.com/embed/ZZ5LpwO-An4"
-                            title="Project Hijack Gameplay"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
+                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.youtube.com/embed/ZZ5LpwO-An4" title="Project Hijack Gameplay" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -403,7 +366,7 @@
 
     <section id="careers">
         <div class="container">
-            <h2>Careers</h2>
+            <h2>Join the Team</h2>
             <div class="requirements-box">
                 <div style="text-align: center; margin-bottom: 20px;">
                     <p>Transparent <strong>Revenue Share</strong> model for professional collaboration.</p>
@@ -420,7 +383,7 @@
                     <div class="req-column">
                         <h3>Compliance</h3>
                         <ul>
-                            <li>Applicants must be authorized to work in the U.S. or in their country of residence.</li>
+                            <li>Must be authorized to work in the U.S. or in your country of residence.</li>
                             <li>Operate as B2B/Independent Contractor.</li>
                             <li>Must provide own software & equipment.</li>
                         </ul>
@@ -432,40 +395,54 @@
                 <details class="job-card">
                     <summary>Environmental Artist (UE5)</summary>
                     <div class="job-details">
-                        <h4>Mission</h4><p>Design and light the game world in UE5.</p>
-                        <h4>Must Have</h4><p>Blender/Maya, Substance, Lumen/Nanite experience.</p>
+                        <div class="job-text-content">
+                            <h4>Mission</h4><p>Design and light the game world in UE5.</p>
+                            <h4>Must Have</h4><p>Blender/Maya, Substance, Lumen/Nanite experience.</p>
+                        </div>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
+
                 <details class="job-card">
                     <summary>Animator</summary>
                     <div class="job-details">
-                        <h4>Mission</h4><p>Bring characters and creatures to life in UE5.</p>
-                        <h4>Must Have</h4><p>Strong 3D animation portfolio, rigging/skinning expertise.</p>
+                        <div class="job-text-content">
+                            <h4>Mission</h4><p>Bring characters and creatures to life in UE5.</p>
+                            <h4>Must Have</h4><p>Strong 3D animation portfolio, rigging/skinning expertise.</p>
+                        </div>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
+
                 <details class="job-card">
                     <summary>3D Artist</summary>
                     <div class="job-details">
-                        <h4>Mission</h4><p>Model characters and high-quality props.</p>
-                        <h4>Must Have</h4><p>ZBrush sculpting, PBR texturing, UE5 optimization.</p>
+                        <div class="job-text-content">
+                            <h4>Mission</h4><p>Model characters and high-quality props.</p>
+                            <h4>Must Have</h4><p>ZBrush sculpting, PBR texturing, UE5 optimization.</p>
+                        </div>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
+
                 <details class="job-card">
                     <summary>Lead Marketing</summary>
                     <div class="job-details">
-                        <h4>Mission</h4><p>Execute strategy to build hype and launch.</p>
-                        <h4>Must Have</h4><p>Gaming industry marketing and community growth experience.</p>
+                        <div class="job-text-content">
+                            <h4>Mission</h4><p>Execute strategy to build hype and launch.</p>
+                            <h4>Must Have</h4><p>Gaming industry marketing and community growth experience.</p>
+                        </div>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
+
                 <details class="job-card">
                     <summary>Community Manager</summary>
                     <div class="job-details">
-                        <h4>Mission</h4><p>Voice of the brand across Discord and social.</p>
-                        <h4>Must Have</h4><p>Expert-level Discord server management skills.</p>
+                        <div class="job-text-content">
+                            <h4>Mission</h4><p>Voice of the brand across Discord and social.</p>
+                            <h4>Must Have</h4><p>Expert-level Discord server management skills.</p>
+                        </div>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
