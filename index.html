@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Growth Games | Careers</title>
+    <title>New Growth Games | Project Hijack</title>
     <style>
         /* --- CSS VARIABLES --- */
         :root {
@@ -11,8 +11,8 @@
             --card-bg: #1e1e1e;
             --text-main: #e0e0e0;
             --text-muted: #a0a0a0;
-            --accent: #00ff88;
-            --accent-hover: #00cc6a;
+            --accent: #ff4d00; /* High Octane Orange */
+            --accent-hover: #cc3d00;
             --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             --border-color: #333;
         }
@@ -64,21 +64,21 @@
         /* --- HERO SECTION --- */
         .hero {
             text-align: center;
-            padding: 120px 20px;
-            /* Placeholder for Project Hijack Art */
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080?text=Project+Hijack+Concept');
+            padding: 140px 20px;
+            /* Placeholder for Vehicle Action Art */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1920x1080?text=Vehicle+Heist+Concept+Art');
             background-size: cover;
             background-position: center;
             border-bottom: 2px solid var(--accent);
         }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-        .hero p { font-size: 1.25rem; color: #ddd; max-width: 600px; margin: 0 auto 30px auto; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
+        .hero p { font-size: 1.4rem; color: #ddd; max-width: 700px; margin: 0 auto 30px auto; font-weight: 300; }
 
         .btn {
             display: inline-block;
             background: var(--accent);
-            color: #000;
+            color: #fff;
             padding: 12px 30px;
             border-radius: 4px;
             font-weight: bold;
@@ -117,15 +117,19 @@
         .game-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            gap: 50px;
+            align-items: start;
         }
-        .game-image img { width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent); }
+        .game-image img { width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 1px solid #333; }
+        h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent); text-transform: uppercase; }
 
-        /* --- CAREERS SECTION (REDESIGNED) --- */
+        .game-features { margin-top: 20px; }
+        .game-features li { margin-bottom: 15px; display: flex; align-items: flex-start; }
+        .game-features li span { margin-right: 15px; font-size: 1.2rem; }
+
+        /* --- CAREERS SECTION --- */
         .requirements-box {
-            background: rgba(0, 255, 136, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--accent);
             padding: 30px;
             border-radius: 8px;
@@ -171,7 +175,7 @@
             align-items: center;
         }
 
-        summary::-webkit-details-marker { display: none; } /* Hide default triangle */
+        summary::-webkit-details-marker { display: none; }
 
         summary::after {
             content: "+";
@@ -189,7 +193,7 @@
             margin-top: 20px;
             padding: 8px 20px;
             background: var(--accent);
-            color: black;
+            color: #fff;
             font-weight: bold;
             border-radius: 4px;
             font-size: 0.9rem;
@@ -230,7 +234,7 @@
     <section class="hero">
         <div class="container">
             <h1>Project: HIJACK</h1>
-            <p>Cultivate your world. Survive the elements. Restore balance.</p>
+            <p>High-Octane. Vehicle-Fueled. Roguelike.</p>
             <a href="#careers" class="btn">View Open Roles</a>
         </div>
     </section>
@@ -267,19 +271,44 @@
         <div class="container">
             <div class="game-grid">
                 <div class="game-content">
-                    <h2>The Game: Project Hijack</h2>
-                    <p><strong>Project: HIJACK</strong> is a working title for our upcoming open-world survival game built in <strong>Unreal Engine 5</strong>.</p>
+                    <h2>The Game</h2>
+                    <p style="font-size: 1.1rem; color: #fff; margin-bottom: 20px;">
+                        <strong>Project: HIJACK</strong> delivers a dynamic vehicular heist experience on a resource-strapped frontier world.
+                    </p>
+                    <p>
+                        Players embody operatives of the <strong>Badlands Alliance</strong>, scavenging corporate remnants amid minimal oversight. The gameplay loop orchestrates emotional arcs: meticulous preparation yields to visceral combat and vehicular pursuits.
+                    </p>
                     <br>
-                    <p>Players will explore a procedurally generated ecosystem where every plant and creature interacts with one another. Your goal is not just to survive, but to restore balance to a dying world.</p>
-                    <br>
-                    <ul>
-                        <li>✓ Dynamic Weather Systems</li>
-                        <li>✓ Co-op Multiplayer</li>
-                        <li>✓ Systemic Ecosystem Design</li>
+                    <p>
+                        Roguelike progression via garage-based customization and mission selection drives long-term engagement, with player agency shaping the morally complex narrative of the Alliance.
+                    </p>
+
+                    <ul class="game-features">
+                        <li>
+                            <span>🏎️</span>
+                            <div>
+                                <strong>High-Octane Core Loop</strong><br>
+                                <span style="font-size: 0.9rem; color: var(--text-muted);">Stealthy Setup -> Chaos Erupts -> Chase Mayhem.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span>💥</span>
+                            <div>
+                                <strong>Vehicular Fury</strong><br>
+                                <span style="font-size: 0.9rem; color: var(--text-muted);">"Heat" meets "Mad Max." Short, addictive bursts of action.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span>🔧</span>
+                            <div>
+                                <strong>Roguelite Progression</strong><br>
+                                <span style="font-size: 0.9rem; color: var(--text-muted);">Customize your rig, pick your missions, and build the Badlands Alliance.</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="game-image">
-                    <img src="https://via.placeholder.com/600x400?text=Project+Hijack+Screenshot" alt="Gameplay Screenshot">
+                    <img src="https://via.placeholder.com/600x400?text=Vehicle+Combat+Screenshot" alt="Project Hijack Gameplay">
                 </div>
             </div>
         </div>
@@ -323,7 +352,7 @@
                         <p>Design, model, texture, and light the game world. You are responsible for creating the atmosphere and visual fidelity of our environments, ensuring both beauty and performance within UE5.</p>
                         <h4>Must Have</h4>
                         <p>Expertise in 3D modeling (e.g., Blender, Maya), texturing (e.g., Substance Painter), and proven experience with UE5's lighting and material pipelines (Lumen, Nanite).</p>
-                        <a href="mailto:jobs@newgrowthgames.com?subject=Environmental Artist Application" class="apply-btn-small">Apply via Email</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
 
@@ -334,7 +363,7 @@
                         <p>Bring life and personality to all in-game characters, creatures, and objects. You will be responsible for creating high-quality, expressive animations that enhance gameplay and narrative immersion.</p>
                         <h4>Must Have</h4>
                         <p>Proven expertise in 3D animation software (Maya, Blender) with a strong portfolio showcasing realistic and stylized character work. Deep understanding of animation principles, rigging, skinning, and implementing animation systems in UE5.</p>
-                        <a href="mailto:jobs@newgrowthgames.com?subject=Animator Application" class="apply-btn-small">Apply via Email</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
 
@@ -345,7 +374,7 @@
                         <p>Model, sculpt, and prepare all non-environment 3D assets, primarily focusing on high-quality characters, creatures, and unique props. You will work closely with the Animator and Environment team.</p>
                         <h4>Must Have</h4>
                         <p>Exceptional skills in high-poly sculpting (ZBrush) and low-poly modeling (Maya, Blender). Advanced proficiency in PBR texturing (Substance Painter) and asset optimization for UE5.</p>
-                        <a href="mailto:jobs@newgrowthgames.com?subject=3D Artist Application" class="apply-btn-small">Apply via Email</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
 
@@ -356,7 +385,7 @@
                         <p>Define and implement a clear, intuitive, and aesthetically pleasing User Interface (UI) and User Experience (UX). You'll be the bridge between the player and the game.</p>
                         <h4>Must Have</h4>
                         <p>Strong portfolio demonstrating UI/UX design principles for games, experience implementing UI using Unreal Motion Graphics (UMG), and a player-centric design philosophy.</p>
-                        <a href="mailto:jobs@newgrowthgames.com?subject=UI/UX Designer Application" class="apply-btn-small">Apply via Email</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
 
@@ -367,7 +396,7 @@
                         <p>Define, document, and iterate on core gameplay systems, mechanics, and user experience (UX). Translate creative vision into actionable design specifications.</p>
                         <h4>Must Have</h4>
                         <p>Ability to design and prototype complex systems (combat, economy). Mandatory proficiency in documentation (design pillars, specs) and modern level design principles. Experience with UE5 or Unity is essential.</p>
-                        <a href="mailto:jobs@newgrowthgames.com?subject=Game Designer Application" class="apply-btn-small">Apply via Email</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
 
@@ -378,7 +407,7 @@
                         <p>Craft a compelling and cohesive storyline, write all in-game text (dialogue, lore, item descriptions), and integrate narrative elements seamlessly into gameplay.</p>
                         <h4>Must Have</h4>
                         <p>Exceptional creative writing skills for character-driven dialogue. Proficiency in narrative tools (e.g., Articy Draft) and understanding of non-linear storytelling. Experience integrating text/audio assets in UE5 required.</p>
-                        <a href="mailto:jobs@newgrowthgames.com?subject=Narrative Designer Application" class="apply-btn-small">Apply via Email</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
 
@@ -389,7 +418,7 @@
                         <p>Develop and execute a comprehensive marketing strategy to build community, generate buzz, and drive a successful launch. Includes social media, content creation, and press outreach.</p>
                         <h4>Must Have</h4>
                         <p>Proven experience in digital marketing specifically within the gaming industry. Strong grasp of market trends, community building, and campaign measurement.</p>
-                        <a href="mailto:jobs@newgrowthgames.com?subject=Lead Marketing Application" class="apply-btn-small">Apply via Email</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
 
@@ -400,7 +429,7 @@
                         <p>Serve as the primary voice of the brand and the bridge between the development team and our community. Foster a positive, engaging environment across all channels.</p>
                         <h4>Must Have</h4>
                         <p>Authentic passion for gaming and community building. Expert-level proficiency in managing large Discord servers and handling conflict resolution.</p>
-                        <a href="mailto:jobs@newgrowthgames.com?subject=Community Manager Application" class="apply-btn-small">Apply via Email</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
 
