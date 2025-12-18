@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Growth Games</title>
+    <title>New Growth Games | Careers</title>
     <style>
-        /* --- CSS VARIABLES (Easy to change colors here) --- */
+        /* --- CSS VARIABLES --- */
         :root {
             --bg-color: #121212;
             --card-bg: #1e1e1e;
             --text-main: #e0e0e0;
             --text-muted: #a0a0a0;
-            --accent: #00ff88; /* Cyberpunk Green - change to your brand color */
+            --accent: #00ff88;
             --accent-hover: #00cc6a;
             --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-color: #333;
         }
 
         /* --- GLOBAL RESET --- */
@@ -28,6 +29,7 @@
 
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
+        strong { color: #fff; }
 
         /* --- LAYOUT UTILITIES --- */
         .container {
@@ -46,7 +48,7 @@
             background: rgba(18, 18, 18, 0.95);
             backdrop-filter: blur(5px);
             z-index: 100;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid var(--border-color);
         }
 
         nav {
@@ -56,7 +58,6 @@
         }
 
         .logo { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
-
         .nav-links a { margin-left: 20px; font-weight: 500; }
         .nav-links a:hover { color: var(--accent); }
 
@@ -64,7 +65,8 @@
         .hero {
             text-align: center;
             padding: 120px 20px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080?text=Game+Concept+Art'); /* Replace with your game art */
+            /* Placeholder for Project Hijack Art */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080?text=Project+Hijack+Concept');
             background-size: cover;
             background-position: center;
             border-bottom: 2px solid var(--accent);
@@ -81,45 +83,117 @@
             border-radius: 4px;
             font-weight: bold;
             text-transform: uppercase;
+            font-size: 0.9rem;
         }
         .btn:hover { background: var(--accent-hover); }
 
-        /* --- THE GAME SECTION --- */
+        /* --- ABOUT SECTION --- */
+        .about-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px auto;
+        }
+        .about-intro p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 15px;}
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .value-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: 0.3s;
+        }
+        .value-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .value-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+        .value-card h3 { margin-bottom: 10px; color: var(--text-main); }
+        .value-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* --- GAME SECTION --- */
         .game-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
         }
-
         .game-image img { width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-
         h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent); }
 
-        /* --- CAREERS SECTION --- */
-        .jobs-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        /* --- CAREERS SECTION (REDESIGNED) --- */
+        .requirements-box {
+            background: rgba(0, 255, 136, 0.05);
+            border: 1px solid var(--accent);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 50px;
         }
 
-        .job-card {
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .req-column h3 { color: var(--text-main); font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 10px; }
+        .req-column ul li { margin-bottom: 10px; font-size: 0.95rem; color: var(--text-muted); padding-left: 20px; position: relative; }
+        .req-column ul li::before { content: "•"; color: var(--accent); position: absolute; left: 0; }
+
+        /* Job Accordion Styles */
+        .job-list { display: flex; flex-direction: column; gap: 15px; }
+
+        details.job-card {
             background: var(--card-bg);
-            padding: 25px;
             border-radius: 8px;
+            border-left: 4px solid #444;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        details.job-card[open] {
             border-left: 4px solid var(--accent);
+            background: #252525;
+            padding-bottom: 20px;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2rem;
+            list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: transform 0.2s;
         }
 
-        .job-card:hover { transform: translateX(5px); background: #252525; }
+        summary::-webkit-details-marker { display: none; } /* Hide default triangle */
 
-        .job-info h3 { font-size: 1.4rem; margin-bottom: 5px; }
-        .job-info p { color: var(--text-muted); font-size: 0.9rem; }
+        summary::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
 
-        .apply-link { color: var(--accent); font-weight: bold; }
+        details[open] summary::after { content: "-"; }
+
+        .job-details { padding: 0 20px 20px 20px; color: var(--text-muted); font-size: 0.95rem; }
+        .job-details h4 { color: var(--text-main); margin: 15px 0 5px 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        .apply-btn-small {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background: var(--accent);
+            color: black;
+            font-weight: bold;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
 
         /* --- FOOTER --- */
         footer {
@@ -130,11 +204,11 @@
             font-size: 0.9rem;
         }
 
-        /* --- MOBILE RESPONSIVENESS --- */
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .game-grid { grid-template-columns: 1fr; }
-            .job-card { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .requirements-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -145,8 +219,9 @@
             <nav>
                 <a href="#" class="logo">NEW GROWTH GAMES</a>
                 <div class="nav-links">
-                    <a href="#game">Our Game</a>
-                    <a href="#careers">Join Us</a>
+                    <a href="#about">About</a>
+                    <a href="#game">Project Hijack</a>
+                    <a href="#careers">Careers</a>
                 </div>
             </nav>
         </div>
@@ -154,77 +229,69 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Project: Verdant</h1>
-            <p>We are building the next generation of survival exploration games. Cultivate your world. Survive the elements.</p>
-            <a href="#careers" class="btn">We Are Hiring</a>
+            <h1>Project: HIJACK</h1>
+            <p>Cultivate your world. Survive the elements. Restore balance.</p>
+            <a href="#careers" class="btn">View Open Roles</a>
         </div>
     </section>
 
-    <section id="game">
+    <section id="about">
+        <div class="container">
+            <div class="about-intro">
+                <h2>About New Growth Games</h2>
+                <p>New Growth Games is an independent studio of talented developers focused on releasing our first full title. Our formation is the direct result of successful collaboration on various game jams and community projects, which provided us with extensive experience in the development pipeline.</p>
+                <p>We established this studio to cultivate a professional development environment. Our success is built on an environment that actively encourages collaboration, clear communication, and constructive feedback, ensuring our team can create games we are genuinely passionate about!</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <span class="value-icon">🌱</span>
+                    <h3>Professional Growth</h3>
+                    <p>Born from Game Jams, refined by experience. We are building a studio where talent matures into expertise.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">💬</span>
+                    <h3>Communication</h3>
+                    <p>Clear communication and constructive feedback are the bedrock of our development pipeline.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🔥</span>
+                    <h3>Passion</h3>
+                    <p>We don't just write code; we create games we want to play. Passion drives every commit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="game" style="background: #151515;">
         <div class="container">
             <div class="game-grid">
                 <div class="game-content">
-                    <h2>The Game</h2>
-                    <p><strong>Project: HIJACK</strong> is a working title for our upcoming open-world survival game.</p>
+                    <h2>The Game: Project Hijack</h2>
+                    <p><strong>Project: HIJACK</strong> is a working title for our upcoming open-world survival game built in <strong>Unreal Engine 5</strong>.</p>
                     <br>
                     <p>Players will explore a procedurally generated ecosystem where every plant and creature interacts with one another. Your goal is not just to survive, but to restore balance to a dying world.</p>
                     <br>
                     <ul>
                         <li>✓ Dynamic Weather Systems</li>
                         <li>✓ Co-op Multiplayer</li>
-                        <li>✓ Unreal Engine 5 Graphics</li>
+                        <li>✓ Systemic Ecosystem Design</li>
                     </ul>
                 </div>
                 <div class="game-image">
-                    <img src="https://via.placeholder.com/600x400?text=Gameplay+Screenshot" alt="Gameplay Screenshot">
+                    <img src="https://via.placeholder.com/600x400?text=Project+Hijack+Screenshot" alt="Gameplay Screenshot">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="careers" style="background-color: #181818;">
+    <section id="careers">
         <div class="container">
-            <h2>Open Positions</h2>
-            <p style="margin-bottom: 40px; color: var(--text-muted);">
-                We are a passionate, ambitious, and fully remote team developing a new action-adventure roguelike set on a harsh dystopian planet using Unreal Engine 5. We are looking for talented individuals to join us on a contract-to-revenue-share basis. This is a prime opportunity to leverage your expertise, contribute to a title you can be proud of, and see a direct return on your time and effort. We value clear communication, high-quality work, and a collaborative environment.
-            </p>
+            <h2>Join the Team</h2>
 
-            <div class="jobs-list">
-
-                <div class="job-card">
-                    <div class="job-info">
-                        <h3>Unity/C# Developer</h3>
-                        <p>Remote • Full Time</p>
-                    </div>
-                    <a href="mailto:jobs@newgrowthgames.com?subject=Unity Developer Application" class="apply-link">Apply Now →</a>
+            <div class="requirements-box">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <h3 style="color: var(--accent); text-transform: uppercase;">Before You Apply</h3>
+                    <p>We operate on a transparent <strong>Revenue Share</strong> model with a focus on professional collaboration.</p>
                 </div>
-
-                <div class="job-card">
-                    <div class="job-info">
-                        <h3>3D Environment Artist</h3>
-                        <p>Remote • Contract</p>
-                    </div>
-                    <a href="mailto:jobs@newgrowthgames.com?subject=3D Artist Application" class="apply-link">Apply Now →</a>
-                </div>
-
-                <div class="job-card">
-                    <div class="job-info">
-                        <h3>Narrative Designer</h3>
-                        <p>Remote • Part Time</p>
-                    </div>
-                    <a href="mailto:jobs@newgrowthgames.com?subject=Narrative Designer Application" class="apply-link">Apply Now →</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 New Growth Games. All rights reserved.</p>
-            <p style="margin-top: 10px;">Contact: hello@newgrowthgames.com</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                <div class="requirements-grid
