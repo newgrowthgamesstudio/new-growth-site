@@ -133,14 +133,36 @@
         .btn-discord { background: var(--discord-blurple); }
         .btn-discord:hover { background: #4752c4; }
 
-        /* --- MISSION STATEMENT STYLE --- */
+        /* --- ABOUT US STYLES --- */
+        .about-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+        }
         .mission-statement {
             font-style: italic;
             color: var(--accent);
-            font-size: 1.25rem;
-            margin-top: 20px;
-            padding: 0 20px;
+            font-size: 1.3rem;
+            margin-top: 25px;
+            font-weight: 500;
         }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .value-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: 0.3s;
+        }
+        .value-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .value-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+        .value-card h3 { margin-bottom: 10px; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px; }
 
         /* --- GAME SECTION --- */
         .game-grid {
@@ -164,29 +186,24 @@
             border-radius: 8px;
             margin-bottom: 40px;
         }
-
         .requirements-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
             margin-top: 20px;
         }
-
         .req-column h3 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 8px; }
         .req-column ul li { margin-bottom: 8px; font-size: 0.9rem; color: var(--text-muted); padding-left: 20px; position: relative; }
         .req-column ul li::before { content: "•"; color: var(--accent); position: absolute; left: 0; }
 
         .job-list { display: flex; flex-direction: column; gap: 12px; }
-
         details.job-card {
             background: var(--card-bg);
             border-radius: 6px;
             border-left: 4px solid #444;
             transition: 0.2s;
         }
-
         details.job-card[open] { border-left: 4px solid var(--accent); background: #222; }
-
         summary {
             padding: 18px;
             cursor: pointer;
@@ -201,7 +218,7 @@
         summary::after { content: "+"; color: var(--accent); font-size: 1.2rem; }
         details[open] summary::after { content: "-"; }
 
-        .job-details { padding: 0 18px 20px 18px; color: var(--text-muted); font-size: 0.9rem; }
+        .job-details { padding: 0 18px 20px 18px; color: var(--text-muted); font-size: 0.95rem; }
         .job-details h4 { color: var(--text-main); margin: 15px 0 5px 0; font-size: 0.9rem; text-transform: uppercase; }
 
         /* --- FOOTER --- */
@@ -261,13 +278,13 @@
     </section>
 
     <section id="about">
-        <div class="container" style="text-align: center;">
+        <div class="container">
             <div class="about-intro">
                 <h2>Our Studio</h2>
                 <p>New Growth Games is an independent studio of talented developers focused on releasing our first full title. Our formation is the direct result of successful collaboration on game jams and community projects.</p>
                 <p class="mission-statement">"Building games with soul that respect the players time and reward their skill."</p>
             </div>
-            <div class="values-grid" style="margin-top: 40px;">
+            <div class="values-grid">
                 <div class="value-card">
                     <span class="value-icon">🌱</span>
                     <h3>Growth</h3>
@@ -355,6 +372,30 @@
                     <div class="job-details">
                         <h4>Mission</h4><p>Model characters and high-quality props.</p>
                         <h4>Must Have</h4><p>ZBrush sculpting, PBR texturing, UE5 optimization.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
+                    </div>
+                </details>
+                <details class="job-card">
+                    <summary>UI/UX Designer</summary>
+                    <div class="job-details">
+                        <h4>Mission</h4><p>Bridge the player and game through intuitive UI.</p>
+                        <h4>Must Have</h4><p>Unreal Motion Graphics (UMG) experience.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
+                    </div>
+                </details>
+                <details class="job-card">
+                    <summary>Game Designer</summary>
+                    <div class="job-details">
+                        <h4>Mission</h4><p>Iterate on core systems and mechanics.</p>
+                        <h4>Must Have</h4><p>System prototyping, balance, and documentation skills.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
+                    </div>
+                </details>
+                <details class="job-card">
+                    <summary>Narrative Designer</summary>
+                    <div class="job-details">
+                        <h4>Mission</h4><p>Craft storylines and write in-game lore.</p>
+                        <h4>Must Have</h4><p>Creative writing and branching dialogue experience.</p>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_sKdPGRfe9ht1nWAxyjjzGUHra0ZdoMfDrV40JOCK-2O4Ig/viewform" target="_blank" class="apply-btn-small">Apply Now</a>
                     </div>
                 </details>
