@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Growth Games</title>
+    <style>
+        /* --- CSS VARIABLES (Easy to change colors here) --- */
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent: #00ff88; /* Cyberpunk Green - change to your brand color */
+            --accent-hover: #00cc6a;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* --- GLOBAL RESET --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section { padding: 80px 0; }
+
+        /* --- HEADER --- */
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+            border-bottom: 1px solid #333;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+
+        .nav-links a { margin-left: 20px; font-weight: 500; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080?text=Game+Concept+Art'); /* Replace with your game art */
+            background-size: cover;
+            background-position: center;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .hero p { font-size: 1.25rem; color: #ddd; max-width: 600px; margin: 0 auto 30px auto; }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .btn:hover { background: var(--accent-hover); }
+
+        /* --- THE GAME SECTION --- */
+        .game-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .game-image img { width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+
+        h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent); }
+
+        /* --- CAREERS SECTION --- */
+        .jobs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .job-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .job-card:hover { transform: translateX(5px); background: #252525; }
+
+        .job-info h3 { font-size: 1.4rem; margin-bottom: 5px; }
+        .job-info p { color: var(--text-muted); font-size: 0.9rem; }
+
+        .apply-link { color: var(--accent); font-weight: bold; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .game-grid { grid-template-columns: 1fr; }
+            .job-card { flex-direction: column; align-items: flex-start; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">NEW GROWTH GAMES</a>
+                <div class="nav-links">
+                    <a href="#game">Our Game</a>
+                    <a href="#careers">Join Us</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Project: Verdant</h1>
+            <p>We are building the next generation of survival exploration games. Cultivate your world. Survive the elements.</p>
+            <a href="#careers" class="btn">We Are Hiring</a>
+        </div>
+    </section>
+
+    <section id="game">
+        <div class="container">
+            <div class="game-grid">
+                <div class="game-content">
+                    <h2>The Game</h2>
+                    <p><strong>Project: Verdant</strong> is a working title for our upcoming open-world survival game.</p>
+                    <br>
+                    <p>Players will explore a procedurally generated ecosystem where every plant and creature interacts with one another. Your goal is not just to survive, but to restore balance to a dying world.</p>
+                    <br>
+                    <ul>
+                        <li>✓ Dynamic Weather Systems</li>
+                        <li>✓ Co-op Multiplayer</li>
+                        <li>✓ Unreal Engine 5 Graphics</li>
+                    </ul>
+                </div>
+                <div class="game-image">
+                    <img src="https://via.placeholder.com/600x400?text=Gameplay+Screenshot" alt="Gameplay Screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="careers" style="background-color: #181818;">
+        <div class="container">
+            <h2>Open Positions</h2>
+            <p style="margin-bottom: 40px; color: var(--text-muted);">
+                We are a remote-first team. If you love systemic design and emergent gameplay, we want to hear from you.
+            </p>
+
+            <div class="jobs-list">
+
+                <div class="job-card">
+                    <div class="job-info">
+                        <h3>Unity/C# Developer</h3>
+                        <p>Remote • Full Time</p>
+                    </div>
+                    <a href="mailto:jobs@newgrowthgames.com?subject=Unity Developer Application" class="apply-link">Apply Now →</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-info">
+                        <h3>3D Environment Artist</h3>
+                        <p>Remote • Contract</p>
+                    </div>
+                    <a href="mailto:jobs@newgrowthgames.com?subject=3D Artist Application" class="apply-link">Apply Now →</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-info">
+                        <h3>Narrative Designer</h3>
+                        <p>Remote • Part Time</p>
+                    </div>
+                    <a href="mailto:jobs@newgrowthgames.com?subject=Narrative Designer Application" class="apply-link">Apply Now →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 New Growth Games. All rights reserved.</p>
+            <p style="margin-top: 10px;">Contact: hello@newgrowthgames.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>
