@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Crew | New Growth Games</title>
+    <style>
+        /* --- CSS VARIABLES (Matching Main Site) --- */
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent: #5ba345;
+            --border-color: #333;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- SHARED HEADER --- */
+        header {
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            background: rgba(18, 18, 18, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo-container { display: flex; flex-direction: column; align-items: center; }
+        .logo-img { height: 50px; width: auto; }
+        .logo-text { font-size: 0.6rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* --- TEAM LEAD BLOCK --- */
+        .team-section { padding: 80px 0; }
+        .team-lead {
+            margin-bottom: 50px;
+            padding-left: 25px;
+            border-left: 4px solid var(--accent);
+            max-width: 900px;
+        }
+        .team-lead h1 { font-size: 2.6rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+        .team-lead p { font-size: 1.2rem; font-weight: 300; }
+
+        /* --- TEAM GRID --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .member-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: 0.3s;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .member-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        .headshot {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            filter: grayscale(30%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .member-info { padding: 20px 15px 10px 15px; }
+        .member-info h3 { color: #fff; font-size: 1.2rem; margin-bottom: 5px; }
+        .member-info p { color: var(--accent); font-size: 0.9rem; text-transform: uppercase; font-weight: bold; margin-bottom: 15px; }
+
+        .member-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.05);
+            padding: 5px 12px;
+            border-radius: 4px;
+            border: 1px solid #444;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid var(--border-color); font-size: 0.8rem; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo-container">
+                    <img src="NGG_Logo_Large_Transparent.png" alt="Logo" class="logo-img">
+                    <span class="logo-text">New Growth Games</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#game">Project Hijack</a>
+                    <a href="index.html#careers">Careers</a>
+                    <a href="team.html" style="color: var(--accent);">Our Crew</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="team-lead">
+                <h1>OUR CREW</h1>
+                <p>The developers, artists, and visionaries behind the Badlands Alliance.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="member-card">
+                    <img src="https://via.placeholder.com/400x400" alt="Name" class="headshot">
+                    <div class="member-info">
+                        <h3>Name Here</h3>
+                        <p>Lead Developer</p>
+                    </div>
+                    <div class="member-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Portfolio</a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src="https://via.placeholder.com/400x400" alt="Name" class="headshot">
+                    <div class="member-info">
+                        <h3>Name Here</h3>
+                        <p>Environmental Artist</p>
+                    </div>
+                    <div class="member-links">
+                        <a href="#" class="social-link">ArtStation</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src="https://via.placeholder.com/400x400" alt="Name" class="headshot">
+                    <div class="member-info">
+                        <h3>Name Here</h3>
+                        <p>Lead Marketing</p>
+                    </div>
+                    <div class="member-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 NEW GROWTH GAMES LLC.</p>
+    </footer>
+
+</body>
+</html>
